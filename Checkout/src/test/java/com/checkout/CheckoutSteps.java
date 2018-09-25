@@ -7,9 +7,8 @@ import cucumber.api.java.en.When;
 
 public class CheckoutSteps {
 	@Given("^the price of a \"([^\"]*)\" is (\\d+)c$")
-	public void thePriceOfAIsC(String arg1, int arg2) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	public void thePriceOfAIsC(String name, int price) throws Throwable {
+	    int bananaPrice = price;
 	}
 
 	@When("^I checkout (\\d+) \"([^\"]*)\"$")
