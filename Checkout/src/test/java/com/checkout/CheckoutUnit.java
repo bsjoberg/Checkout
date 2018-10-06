@@ -9,6 +9,7 @@ public class CheckoutUnit {
 	@Test
 	public void test() {
 		fail("Not yet implemented");
+		
 	}
 
 }

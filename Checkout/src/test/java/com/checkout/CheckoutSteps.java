@@ -21,7 +21,6 @@ public class CheckoutSteps {
 
 	@Then("^the total price should be (\\d+)c$")
 	public void theTotalPriceShouldBeC(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
 	    throw new PendingException();
 	}
 
