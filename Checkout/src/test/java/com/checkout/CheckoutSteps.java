@@ -12,12 +12,12 @@ public class CheckoutSteps {
 	
 	@Given("^the price of a \"([^\"]*)\" is (\\d+)c$")
 	public void thePriceOfAIsC(String name, int price) throws Throwable {
+	    checkout = new Checkout();
 	    bananaPrice = price;
 	}
 
 	@When("^I checkout (\\d+) \"([^\"]*)\"$")
 	public void iCheckout(int itemCount, String itemName) throws Throwable {
-	    checkout = new Checkout();
 	    checkout.add(itemCount, bananaPrice);
 	}
 

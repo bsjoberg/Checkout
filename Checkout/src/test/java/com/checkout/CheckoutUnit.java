@@ -58,4 +58,11 @@ public class CheckoutUnit {
 		checkout.add(2, 10);
 		assertEquals(20, checkout.total());
 	}
+	
+	@Test 
+	public void testTotalWhenAddingSameItemTwice() {
+		checkout.add(1, 20);
+		checkout.add(1, 20);
+		assertEquals(40, checkout.total());
+	}
 }
