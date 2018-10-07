@@ -8,17 +8,25 @@ import cucumber.api.java.en.When;
 
 public class CheckoutSteps {
 	private int bananaPrice = 0;
+	private int applePrice = 0;
 	private Checkout checkout;
 	
 	@Given("^the price of a \"([^\"]*)\" is (\\d+)c$")
 	public void thePriceOfAIsC(String name, int price) throws Throwable {
 	    checkout = new Checkout();
-	    bananaPrice = price;
+	    
+	    if (name.equals("banana"))
+	    	bananaPrice = price;
+	    else if (name.equals("apple"))
+	    	applePrice = price;    	
 	}
 
 	@When("^I checkout (\\d+) \"([^\"]*)\"$")
 	public void iCheckout(int itemCount, String itemName) throws Throwable {
-	    checkout.add(itemCount, bananaPrice);
+		if (itemName.equals("banana"))
+			checkout.add(itemCount, itemName, bananaPrice);
+		else if (itemName.equals("apple"))
+			checkout.add(itemCount, itemName, applePrice);
 	}
 
 	@Then("^the total price should be (\\d+)c$")

@@ -15,54 +15,59 @@ public class CheckoutUnit {
 	
 	@Test
 	public void testAddOneItem() {
-		checkout.add(1, 10);
+		checkout.add(1, "banana", 10);
 		assertEquals(1, checkout.itemCount());
 	}
 
 	@Test
 	public void testAddTwoItems() {
-		checkout.add(2, 10);
+		checkout.add(2, "banana", 10);
 		assertEquals(2, checkout.itemCount());
 	}
 	
 	@Test
 	public void testAddTwoItemsSubstractOne() {
-		checkout.add(2, 10);
+		checkout.add(2, "banana", 10);
 		assertEquals(2, checkout.itemCount());
-		checkout.subtract(1);
+		checkout.subtract(1, "banana");
 		assertEquals(1, checkout.itemCount());
 	}
 	
 	@Test
 	public void testSubtractOneItem() {
-		checkout.add(1, 10);
-		checkout.subtract(1);
+		checkout.add(1, "banana", 10);
+		checkout.subtract(1, "banana");
 		assertEquals(0, checkout.itemCount());
 	}
 	
 	@Test
 	public void testSubtractTwoItems() {
-		checkout.add(1,10);
-		checkout.subtract(2);
+		checkout.add(1, "banana", 10);
+		checkout.subtract(2, "banana");
 		assertEquals(0, checkout.itemCount());
 	}
 	
 	@Test
 	public void testTotalofTen() {
-		checkout.add(1, 10);
+		checkout.add(1, "banana", 10);
 		assertEquals(10, checkout.total());
 	}
 	
 	@Test
 	public void testTotalofTwoItemsTwentyTotal() {
-		checkout.add(2, 10);
+		checkout.add(2, "banana", 10);
 		assertEquals(20, checkout.total());
 	}
 	
 	@Test 
 	public void testTotalWhenAddingSameItemTwice() {
-		checkout.add(1, 20);
-		checkout.add(1, 20);
+		checkout.add(1, "banana", 20);
+		checkout.add(1, "banana", 20);
 		assertEquals(40, checkout.total());
+	}
+	
+	@Test
+	public void testAddDifferentItemsTotal() {
+		
 	}
 }
