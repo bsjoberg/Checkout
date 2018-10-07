@@ -1,28 +1,32 @@
 package com.checkout;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class CheckoutUnit {
-
+	private Checkout checkout;
+	
+	@Before
+	public void setup() {
+		checkout = new Checkout();
+	}
+	
 	@Test
 	public void testAddOneItem() {
-		Checkout checkout = new Checkout();
 		checkout.add(1, 10);
 		assertEquals(1, checkout.itemCount());
 	}
 
 	@Test
 	public void testAddTwoItems() {
-		Checkout checkout = new Checkout();
 		checkout.add(2, 10);
 		assertEquals(2, checkout.itemCount());
 	}
 	
 	@Test
 	public void testAddTwoItemsSubstractOne() {
-		Checkout checkout = new Checkout();
 		checkout.add(2, 10);
 		assertEquals(2, checkout.itemCount());
 		checkout.subtract(1);
@@ -31,7 +35,6 @@ public class CheckoutUnit {
 	
 	@Test
 	public void testSubtractOneItem() {
-		Checkout checkout = new Checkout();
 		checkout.add(1, 10);
 		checkout.subtract(1);
 		assertEquals(0, checkout.itemCount());
@@ -39,7 +42,6 @@ public class CheckoutUnit {
 	
 	@Test
 	public void testSubtractTwoItems() {
-		Checkout checkout = new Checkout();
 		checkout.add(1,10);
 		checkout.subtract(2);
 		assertEquals(0, checkout.itemCount());
@@ -47,8 +49,13 @@ public class CheckoutUnit {
 	
 	@Test
 	public void testTotalofTen() {
-		Checkout checkout = new Checkout();
 		checkout.add(1, 10);
 		assertEquals(10, checkout.total());
+	}
+	
+	@Test
+	public void testTotalofTwoItemsTwentyTotal() {
+		checkout.add(2, 10);
+		assertEquals(20, checkout.total());
 	}
 }

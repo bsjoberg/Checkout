@@ -2,6 +2,7 @@ package com.checkout;
 
 public class Checkout {
 	private int itemCount = 0;
+	private int totalPrice = 0;
 	
 	public Checkout() {
 		
@@ -9,6 +10,7 @@ public class Checkout {
 
 	public void add(int itemCount, int bananaPrice) {
 		this.itemCount = this.itemCount + itemCount;
+		totalPrice = totalPrice + itemCount * bananaPrice;
 	}
 
 	public int itemCount() {
@@ -28,7 +30,7 @@ public class Checkout {
 	}
 
 	public int total() {
-		return 10;
+		return totalPrice;
 	}
 
 }
