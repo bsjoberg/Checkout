@@ -31,6 +31,17 @@ public class CheckoutUnit {
 	
 	@Test
 	public void testSubtractOneItem() {
-		
+		Checkout checkout = new Checkout();
+		checkout.add(1, 10);
+		checkout.subtract(1);
+		assertEquals(0, checkout.itemCount());
+	}
+	
+	@Test
+	public void testSubtractTwoItems() {
+		Checkout checkout = new Checkout();
+		checkout.add(1,10);
+		checkout.subtract(2);
+		assertEquals(0, checkout.itemCount());
 	}
 }

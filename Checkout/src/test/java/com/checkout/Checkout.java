@@ -12,12 +12,19 @@ public class Checkout {
 	}
 
 	public int itemCount() {
-		// TODO Auto-generated method stub
 		return itemCount;
 	}
 
 	public void subtract(int itemCount) {
-		this.itemCount = this.itemCount = itemCount;
+		if (this.itemCount > 0)
+		{
+			this.itemCount = this.itemCount - itemCount;
+		}
+		
+		if (this.itemCount < 0)
+		{
+			this.itemCount = 0;
+		}
 	}
 
 }
