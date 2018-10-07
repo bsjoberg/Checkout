@@ -11,7 +11,7 @@ public class CheckoutSteps {
 	private int applePrice = 0;
 	private Checkout checkout;
 	
-	@Given("^the price of a \"([^\"]*)\" is (\\d+)c$")
+	@Given("^the price of an? \"([^\"]*)\" is (\\d+)c$")
 	public void thePriceOfAIsC(String name, int price) throws Throwable {
 	    checkout = new Checkout();
 	    
