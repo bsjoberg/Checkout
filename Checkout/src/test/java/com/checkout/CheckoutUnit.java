@@ -44,4 +44,11 @@ public class CheckoutUnit {
 		checkout.subtract(2);
 		assertEquals(0, checkout.itemCount());
 	}
+	
+	@Test
+	public void testTotalofTen() {
+		Checkout checkout = new Checkout();
+		checkout.add(1, 10);
+		assertEquals(10, checkout.total());
+	}
 }
