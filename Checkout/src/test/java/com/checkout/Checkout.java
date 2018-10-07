@@ -32,5 +32,4 @@ public class Checkout {
 	public int total() {
 		return totalPrice;
 	}
-
 }
